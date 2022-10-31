@@ -83,32 +83,40 @@ exports.updatePost = (req, res) => {
           }
         )
 
-      } else {console.log(err)}
+      } else { console.log(err) }
     }
     else console.log(err)
   })
-  
+
 }
 
-//implémentation : supression des fichiers après qu'un user supprime son post
+//implémentation : supression des fichiers après qu'un user supprime son post + check isAdmin et isAuthor
 
 exports.deletePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id)) {
     return res.status(400).send("unknown ID" + req.params.id)
   }
-  PostModel.findByIdAndDelete(
-    req.params.id,
-    (err, docs) => {
-      if (!err) {
-        res.send(docs) 
-        if(docs.picture !== ""){
-          fs.unlink(path.join(__dirname, '..', 'posts') + `/${docs.picture}`, (err) => {if (err) throw err})
-        }
-      }
-      else console.log("delete error : " + err)
-    }
-  )
+  PostModel.findById(req.params.id, (err, docs) => {
+    if (!err) {
+      if ((req.body.userId === docs.posterId) || req.body.isAdmin) {
+        PostModel.findByIdAndDelete(
+          req.params.id,
+          (err, docs) => {
+            if (!err) {
+              res.send(docs)
+              if (docs.picture !== "") {
+                fs.unlink(path.join(__dirname, '..', 'posts') + `/${docs.picture}`, (err) => { if (err) throw err })
+              }
+            }
+            else console.log("delete error : " + err)
+          }
+        )
+      } else console.log("pas marché")
+    } else console.log(err)
+
+  })
 }
+
 module.exports.likePost = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send("ID unknown : " + req.params.id);

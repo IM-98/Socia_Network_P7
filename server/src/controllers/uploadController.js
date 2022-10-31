@@ -4,7 +4,7 @@ const sharp = require("sharp");
 const { uploadErrors } = require("../utils/errors");
 
 exports.uploadProfil = async (req, res) => {
-  const fileName = req.body.name + Date.now() + ".jpg";
+  const fileName = req.body.name  + ".jpg";
   try {
     if (
       req.file.mimetype != "image/jpg" &&
