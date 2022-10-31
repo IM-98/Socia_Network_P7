@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect } from 'react'
 import {useDispatch, useSelector} from "react-redux"
 import { getPosts } from '../../actions/posts.actions'
-import { getUser } from '../../actions/user.actions'
 import Card from '../Posts/Card'
 import {isEmpty} from "../Utils"
 

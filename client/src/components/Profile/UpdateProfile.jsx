@@ -27,8 +27,6 @@ const UpdateProfil = () => {
       <h1> Profil de {userData.pseudo}</h1>
       <div className="update-container">
         <div className="left-part">
-          <h3>Photo de profil</h3>
-          <img src={ `${process.env.REACT_APP_API_PROFILE}${userData.picture}`} alt="user-pic" />
           <UploadImg />
           {/* <p>{error.maxSize}</p>
           <p>{error.format}</p> */}
