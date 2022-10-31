@@ -1,0 +1,87 @@
+// @import "../../settings";
+
+.btnLog{
+    font-weight: 700;
+    padding: 8px 12px;
+    color: black;
+    background-color: $color-2;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.active{
+    background-color: $color-1;
+    color: white;
+}
+
+.form-container{
+    display: flex;
+    background: $color-2;
+    width: 40%;
+    margin: auto;
+    justify-content: center;
+    border-radius: 15px;
+    border: none;
+    padding: 18px 25px;
+
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+
+    label{
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .submitBtn{
+        border: 0.5px solid;
+        border-radius: 30px;
+        padding: 8px 20px;
+        font-weight: 700;
+        border: none;
+        background-color: $color-1;
+        color: white;
+    }
+    
+    input{
+        margin: 5px 10px;
+        border-radius: 10px;
+        border: none;
+    }
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+
+    label{
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+    }
+    .submitBtn{
+        border: 0.5px solid;
+        border-radius: 30px;
+        padding: 8px 20px;
+        font-weight: 700;
+        border: none;
+        background-color: $color-1;
+        color: white;
+    }
+    
+    input{
+        margin: 5px 10px;
+        border-radius: 10px;
+        border: none;
+    }
+}
+
