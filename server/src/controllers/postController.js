@@ -3,6 +3,8 @@ const User = require("../models/user")
 const ObjectID = require("mongoose").Types.ObjectId
 const sharp = require("sharp");
 const { uploadErrors } = require("../utils/errors");
+const fs = require("fs")
+const path = require("path")
 
 exports.readPost = (req, res) => {
   PostModel.find((err, docs) => {
@@ -57,8 +59,7 @@ exports.createPost = async (req, res) => {
     console.log(err)
     return res.status(400).send(err);
   }
-};
-
+}
 
 //implémentation de la vérification si la personne qui modifie est l'auteur ou un Admin
 exports.updatePost = (req, res) => {
