@@ -75,11 +75,12 @@ export const updatePost = (postId, message, userId, isAdmin) => {
            
     }
 } 
-export const deletePost = (postId) => {
+export const deletePost = (postId, userId, isAdmin) => {
     return(dispatch) => {
         return axios({
             method : "delete",
             url : `${process.env.REACT_APP_API_URL}api/post/` + postId,
+            data : {userId, isAdmin}
         })
         .then( res => {
             dispatch({ type : DELETE_POST, payload: {postId}})
