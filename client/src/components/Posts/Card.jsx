@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { dateParser, isEmpty } from '../Utils'
+import { isEmpty } from '../Utils'
+
+import ReactTimeAgo from "react-time-ago"
 import FollowHandler from "../Profile/FollowHandler"
 import LikeButton from './LikeButton'
 import CommentIcon from '../../styles/assets/message1.svg'  // a transformer en img
@@ -12,7 +14,10 @@ import { updatePost } from '../../actions/posts.actions'
 import Delete from './Delete'
 import Comment from './Comment'
 
+
+
 export default function Card({ post }) {
+    
     const [isLoading, setIsLoading] = useState(true)
     const [isUpdated, setIsUpdated] = useState(false)
     const [textUpdated, setTextUpdated] = useState(null)
@@ -22,7 +27,7 @@ export default function Card({ post }) {
 
     const dispatch = useDispatch()
 
-    console.log()
+    
 
     const updateItem = () => {
 
@@ -66,7 +71,7 @@ export default function Card({ post }) {
                                 {post.posterId !== userData._id && <FollowHandler className="icon" idToFollow={post.posterId} type={"card"} />}
 
                             </div>
-                            <span>{dateParser(post.createdAt)}</span>
+                            <span><ReactTimeAgo date = {Date.parse(post.createdAt)} locale = "fr"/> </span>
                         </div>
                         {isUpdated === false && <p>{post.message}</p>}
                         {isUpdated && <div className="update-post">

@@ -1142,7 +1142,7 @@ html {
   width: 25px;
   height: 25px;
   position: absolute;
-  transform: translate(-16px, -3px);
+  transform: translate(-16px, 5px);
   opacity: 0;
   cursor: pointer;
 }

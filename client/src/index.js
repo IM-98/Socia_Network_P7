@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import TimeAgo from "javascript-time-ago"
+import fr from 'javascript-time-ago/locale/fr.json'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
@@ -14,7 +16,7 @@ import {composeWithDevTools} from "redux-devtools-extension"
 import { getUsers } from './actions/users.actions';
 import { getPosts } from './actions/posts.actions';
 
-
+TimeAgo.addDefaultLocale(fr)
 
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
