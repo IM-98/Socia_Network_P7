@@ -1,21 +1,28 @@
 
 const express = require('express')
+const helmet = require("helmet")
 const userRoutes = require('./src/routes/user.routes')
 const postRoutes = require('./src/routes/post.routes')
 require("dotenv").config({ path: ".env" })
 require("./src/db/mongodb")
 const cookieParser = require("cookie-parser")
 const path = require("path")
-const {checkUser, requireAuth} = require("./src/utils/auth")
+const { checkUser, requireAuth } = require("./src/utils/auth")
 
 const app = express();
 
 app.use(cookieParser())
 app.use(express.json());
 
-app.use("/posts", express.static(path.join(__dirname, "src/posts")))
-app.use("/profile", express.static(path.join(__dirname, "src/profile")))
+// allow cross origin request only in dev stage
+app.use(
+    helmet({
+        crossOriginResourcePolicy: false,
+    })
+)
 
+app.use("/posts", express.static(path.join(__dirname, "uploads/posts")))
+app.use("/profile", express.static(path.join(__dirname, "uploads/profile")))
 
 
 app.use((req, res, next) => {
@@ -29,8 +36,8 @@ app.use((req, res, next) => {
 //jwt
 
 app.get("*", checkUser)
-app.get("/jwtid", requireAuth, (req, res)=> {
-   res.status(200).send(res.locals.user._id)
+app.get("/jwtid", requireAuth, (req, res) => {
+    res.status(200).send(res.locals.user._id)
 })
 
 
@@ -39,4 +46,3 @@ app.use('/api/post', postRoutes);
 
 
 module.exports = app;
- 

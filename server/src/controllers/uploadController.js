@@ -22,8 +22,7 @@ exports.uploadProfil = async (req, res) => {
 
   await sharp(req.file.buffer)
     .resize({ width: 150, height: 150 })
-    .toFile(`${__dirname}/../profile/${fileName}`);
-    console.log(`${__dirname}/../profile/${fileName}`)
+    .toFile(`${__dirname}/../../uploads/profile/${fileName}`);
   try {
     await User.findByIdAndUpdate(
       req.body.userId,

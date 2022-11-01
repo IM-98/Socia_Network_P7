@@ -35,8 +35,8 @@ exports.createPost = async (req, res) => {
     }
     fileName = req.body.posterId + Date.now() + ".jpg";
     await sharp(req.file.buffer)
-      .toFile(`${__dirname}/../posts/${fileName}`);
-    console.log(`${__dirname}/../posts/${fileName}`)
+      .toFile(`${__dirname}/../../uploads/posts/${fileName}`);
+    console.log(`${__dirname}/../../uploads/posts/${fileName}`)
 
   }
 
@@ -106,7 +106,7 @@ exports.deletePost = (req, res) => {
             if (!err) {
               res.send(docs)
               if (docs.picture !== "") {
-                fs.unlink(path.join(__dirname, '..', 'posts') + `/${docs.picture}`, (err) => { if (err) throw err })
+                fs.unlink(path.join(__dirname, '../..', 'uploads/posts') + `/${docs.picture}`, (err) => { if (err) throw err })
               }
             }
             else console.log("delete error : " + err)

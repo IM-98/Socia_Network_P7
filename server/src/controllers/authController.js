@@ -31,7 +31,7 @@ const createToken = (id) => {
   return jwt.sign({id}, process.env.TOKEN, {expiresIn : "24h"})
 }
 
-// pas utilisé les memes erreurs que le tuto
+
 exports.signIn = (req, res) => {
   User.findOne({ email: req.body.email })
   .then(user => {
