@@ -1,6 +1,6 @@
-
 const express = require('express')
 const helmet = require("helmet")
+const rateLimit = require('express-rate-limit')
 const userRoutes = require('./src/routes/user.routes')
 const postRoutes = require('./src/routes/post.routes')
 require("dotenv").config({ path: ".env" })
@@ -13,6 +13,15 @@ const app = express();
 
 app.use(cookieParser())
 app.use(express.json());
+
+const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    standardHeaders: true,
+    legacyHeaders: false,
+})
+
+app.use("/login", apiLimiter) // prevent brute force attack
 
 // allow cross origin request only in dev stage
 app.use(
