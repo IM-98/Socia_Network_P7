@@ -32,7 +32,7 @@ function Comment({ post }) {
                         <div className='left-part'>
                             <img src={!isEmpty(usersData[0]) && usersData.map(user => {
                                 if (user._id === comment.commenterId)
-                                    return user.picture
+                                    return (`${process.env.REACT_APP_API_PROFILE}${user.picture}`)
                                 else return null
                                     
                             }).join("")} alt="commenter-pic" />
