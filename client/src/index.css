@@ -707,13 +707,18 @@ html {
   border-radius: 20px 20px 6px 20px;
 }
 .card-container .card-right .update-post .button-container .btn {
-  background: #ffd0c4;
-  width: 240px;
+  background: #ff7b77;
   transform: translateY(-3px);
+  width: inherit;
+  transition: 0.2s;
+  border-radius: 15px;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin: 10px 2px;
 }
 .card-container .card-right .update-post .button-container .btn:hover {
-  background: #ff7b77;
-  width: 250px;
+  background: #ffd0c4;
   letter-spacing: 1px;
 }
 .card-container .card-right .card-pic {
@@ -907,7 +912,7 @@ html {
   background: #fdeeee;
   border-radius: 20px;
   padding: 20px;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
 }
 .card-container .card-right .comment-form input[type=text]:focus {
@@ -1071,8 +1076,8 @@ html {
 }
 @media screen and (max-width: 440px) {
   .post-container .post-form .card-container .card-right .card-header .date-post {
-    left: 14px;
-    top: 60px;
+    left: 130px;
+    top: 0px;
   }
 }
 .post-container .post-form .card-container .card-right .content {

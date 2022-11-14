@@ -130,7 +130,7 @@ function Post() {
                                 )}
                                 <div className="btn-send">
                                     {message || postPicture || video.length > 20 ? (
-                                        <button className="cancel" onClick={cancelPost}> Annuler le post</button>
+                                        <button className="cancel" onClick={cancelPost}> Annuler</button>
                                     ) : null}
                                     <button className="send" onClick={handlePost}>Envoyer</button>
                                 </div>

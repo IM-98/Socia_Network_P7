@@ -3,7 +3,8 @@ import { useSelector } from "react-redux"
 import { useDispatch } from 'react-redux'
 import { commentPost, getPosts } from '../../actions/posts.actions'
 import FollowHandler from '../Profile/FollowHandler'
-import { isEmpty, timestampParser } from '../Utils'
+import { isEmpty } from '../Utils'
+import ReactTimeAgo from "react-time-ago"
 import EditDeleteComment from './EditDeleteComment'
 
 
@@ -23,7 +24,6 @@ function Comment({ post }) {
         }
 
     }
-
     return (
         <div className="comments-container">
             {post.comments.map(comment => {
@@ -43,7 +43,7 @@ function Comment({ post }) {
                                     <h3>{comment.commenterPseudo}</h3>
                                     {comment.commenterId !== userData._id && <FollowHandler idToFollow={comment.commenterId} type={"card"} />}
                                 </div>
-                                <span>{timestampParser(comment.timestamp)}</span>
+                                <span><ReactTimeAgo date = {comment.timestamp} locale = "fr"/></span>
                             </div>
                             <p>{comment.text}</p>
                             <EditDeleteComment comment ={comment} postId = {post._id}/>
