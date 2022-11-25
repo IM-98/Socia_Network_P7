@@ -52,7 +52,7 @@ Then you will be able to run the app on your default browser by doing npm start 
 
 Finally, you should see this page in your browser :
 
-![Connection Interface](register.png?raw=true "Connection")
+                    ![Connection Interface](register.png?raw=true "Connection")
 
 You can now register a new user and see it in your MongoDb Cluster.
 
