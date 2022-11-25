@@ -50,7 +50,7 @@ REACT_APP_API_IMG = "localhost:4200/posts"
 
 Then you will be able to run the app on your default browser by doing npm start in the terminal.
 
-Finally, you should see this page in youur browser :
+Finally, you should see this page in your browser :
 
 ![Connection Interface](register.png?raw=true "Connection")
 
@@ -62,7 +62,7 @@ Password will be hashed thanks to bcrypt package but you will able to see all us
 
 By default, all users have an admin attribut set on false.
 If you need an admin role for one of your user, you can set the boolean "isAdmin" on true,
-directly in your MongoDb cluster.
+directly in your MongoDb collection.
 
 ```
 const schemaUser = mongoose.Schema({
