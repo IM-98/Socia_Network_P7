@@ -40,7 +40,7 @@ After that done, you can do npm start in the terminal and you should see a succe
 The application has been made with create-react-app and run on port 3000.
 
 To run the app in your browser, first go to the "client" folder and do npm install.
-After that, still in this folder create a new file name ".env" with these variables inside :
+After that, still in this folder create a new file named ".env" with these variables inside :
 
 ``` 
 REACT_APP_API_PROFILE = "localhost:4200/profile"
