@@ -46,6 +46,8 @@ After that, still in this folder create a new file named ".env" with these varia
 REACT_APP_API_PROFILE = "localhost:4200/profile"
 
 REACT_APP_API_IMG = "localhost:4200/posts"
+
+REACT_APP_API_URL = "http://localhost:4200/"
 ```
 
 Then you will be able to run the app on your default browser by doing npm start in the terminal.
