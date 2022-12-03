@@ -60,7 +60,5 @@ yarn-error.log*
 
 **/node_modules
 **/public/uploads
-**/uploads/posts
-**/uploads/profile
-!/uploads/posts/.gitkeep 
-!/uploads/profile/.gitkeep 
+**/uploads/posts/*
+**/uploads/profile/*
