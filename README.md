@@ -40,19 +40,21 @@ After that done, you can do npm start in the terminal and you should see a succe
 The application has been made with create-react-app and run on port 3000.
 
 To run the app in your browser, first go to the "client" folder and do npm install.
-After that, still in this folder create a new file name ".env" with these variables inside :
+After that, still in this folder create a new file named ".env" with these variables inside :
 
 ``` 
 REACT_APP_API_PROFILE = "localhost:4200/profile"
 
 REACT_APP_API_IMG = "localhost:4200/posts"
+
+REACT_APP_API_URL = "http://localhost:4200/"
 ```
 
 Then you will be able to run the app on your default browser by doing npm start in the terminal.
 
-Finally, you should see this page in youur browser :
+Finally, you should see this page in your browser :
 
-![Connection Interface](register.png?raw=true "Connection")
+   ![Connection Interface](register.png?raw=true "Connection")
 
 You can now register a new user and see it in your MongoDb Cluster.
 
@@ -62,7 +64,7 @@ Password will be hashed thanks to bcrypt package but you will able to see all us
 
 By default, all users have an admin attribut set on false.
 If you need an admin role for one of your user, you can set the boolean "isAdmin" on true,
-directly in your MongoDb cluster.
+directly in your MongoDb collection.
 
 ```
 const schemaUser = mongoose.Schema({
