@@ -62,4 +62,5 @@ yarn-error.log*
 **/public/uploads
 **/uploads/posts
 **/uploads/profile
-register.png
+!/uploads/posts/.gitkeep 
+!/uploads/profile/.gitkeep 
