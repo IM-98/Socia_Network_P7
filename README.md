@@ -27,11 +27,8 @@ TOKEN = "YOUR_RANDOM_TOKEN"
 
 ```
 
-Still in the server folder, create a new folder named "uploads" with 2 other folder in it : "posts" and "profile".
+Still in the server folder,in "profile" folder, you can add an image named "random-user.png", which will be your default profile picture.
 
-In "profile" folder, you can add an image named "random-user.png", which will be your default profile picture.
-
-These folder are where your client images upload will be stored.
 
 After that done, you can do npm start in the terminal and you should see a success message in the console.
 
@@ -43,11 +40,12 @@ To run the app in your browser, first go to the "client" folder and do npm insta
 After that, still in this folder create a new file named ".env" with these variables inside :
 
 ``` 
+REACT_APP_API_URL = "http://localhost:4200/"
+
 REACT_APP_API_PROFILE = "localhost:4200/profile"
 
 REACT_APP_API_IMG = "localhost:4200/posts"
 
-REACT_APP_API_URL = "http://localhost:4200/"
 ```
 
 Then you will be able to run the app on your default browser by doing npm start in the terminal.
